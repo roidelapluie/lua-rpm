@@ -12,7 +12,7 @@
 
 Name:           lua
 Version:        %{major_version}.4
-Release:        10%{?dist}
+Release:        11%{?dist}
 Summary:        Powerful light-weight programming language
 Group:          Development/Languages
 License:        MIT
@@ -44,6 +44,7 @@ Patch9:         lua-5.3.4-bug1.patch
 Patch10:        lua-5.3.4-bug4.patch
 Patch11:        lua-5.3.4-bug5.patch
 Patch12:        lua-5.3.4-bug6.patch
+Patch13:	lua-5-3.4-upvaluejoin.patch
 
 BuildRequires:  automake autoconf libtool readline-devel ncurses-devel
 Requires:       lua-libs = %{version}-%{release}
@@ -100,6 +101,7 @@ mv src/luaconf.h src/luaconf.h.template.in
 %patch10 -p1 -b .bug4
 %patch11 -p1 -b .bug5
 %patch12 -p1 -b .bug6
+%patch13 -p1 -b .upvaluejoin
 # Put proper version in configure.ac, patch0 hardcodes 5.3.0
 sed -i 's|5.3.0|%{version}|g' configure.ac
 autoreconf -ifv
@@ -222,6 +224,9 @@ install -Dpm 0644 %{SOURCE1000} $RPM_BUILD_ROOT/%{macrosdir}/macros.lua
 
 
 %changelog
+* Mon Jun 03 2019 Florian Festi <ffesti@redhat.com> - 5.3.4-11
+- Fix use after free in lua_upvaluejoin (#1670167)
+
 * Tue Feb 13 2018 Tom Callaway <spot@fedoraproject.org> - 5.3.4-10
 - move lua(abi) provide to -libs
 - add fix for bug 6
