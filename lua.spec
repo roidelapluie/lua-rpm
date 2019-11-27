@@ -12,7 +12,7 @@
 
 Name:           lua53
 Version:        %{major_version}.4
-Release:        11%{?dist}
+Release:        12%{?dist}
 Summary:        Powerful light-weight programming language
 Group:          Development/Languages
 License:        MIT
