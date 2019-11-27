@@ -10,7 +10,7 @@
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
 
 
-Name:           lua
+Name:           lua53
 Version:        %{major_version}.4
 Release:        11%{?dist}
 Summary:        Powerful light-weight programming language
