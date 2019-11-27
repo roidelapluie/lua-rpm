@@ -47,7 +47,7 @@ Patch12:        lua-5.3.4-bug6.patch
 Patch13:	lua-5-3.4-upvaluejoin.patch
 
 BuildRequires:  automake autoconf libtool readline-devel ncurses-devel
-Requires:       lua-libs = %{version}-%{release}
+Requires:       lua53-libs = %{version}-%{release}
 
 %description
 Lua is a powerful light-weight programming language designed for
@@ -62,7 +62,7 @@ configuration, scripting, and rapid prototyping.
 %package devel
 Summary:        Development files for lua
 Group:          System Environment/Libraries
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       lua53%{?_isa} = %{version}-%{release}
 Requires:       pkgconfig
 
 %description devel
@@ -70,7 +70,7 @@ This package contains development files for %{name}.
 
 %package libs
 Summary:        Libraries for %{name}
-Provides:       lua(abi) = %{major_version}
+Provides:       lua53(abi) = %{major_version}
 
 %description libs
 This package contains the shared libraries for %{name}.
@@ -78,7 +78,7 @@ This package contains the shared libraries for %{name}.
 %package static
 Summary:        Static library for %{name}
 Group:          System Environment/Libraries
-Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       lua53%{?_isa} = %{version}-%{release}
 
 %description static
 This package contains the static version of liblua for %{name}.
