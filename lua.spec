@@ -28,16 +28,16 @@ Source3:        https://www.lua.org/tests/lua-%{version}-tests.tar.gz
 Source4:        luaconf.h
 # rpm-macro
 Source1000:     macros.lua
-Patch0:         %{name}-5.3.0-autotoolize.patch
-Patch1:         %{name}-5.3.0-idsize.patch
-#Patch2:         %%{name}-5.3.0-luac-shared-link-fix.patch
-Patch3:         %{name}-5.2.2-configure-linux.patch
-Patch4:         %{name}-5.3.0-configure-compat-module.patch
+Patch0:         lua-5.3.0-autotoolize.patch
+Patch1:         lua-5.3.0-idsize.patch
+#Patch2:         %lua-5.3.0-luac-shared-link-fix.patch
+Patch3:         lua-5.2.2-configure-linux.patch
+Patch4:         lua-5.3.0-configure-compat-module.patch
 %if 0%{?bootstrap}
-Patch5:         %{name}-5.2.3-autotoolize.patch
-Patch6:         %{name}-5.2.2-idsize.patch
-Patch7:         %{name}-5.2.2-luac-shared-link-fix.patch
-Patch8:         %{name}-5.2.2-configure-compat-module.patch
+Patch5:         lua-5.2.3-autotoolize.patch
+Patch6:         lua-5.2.2-idsize.patch
+Patch7:         lua-5.2.2-luac-shared-link-fix.patch
+Patch8:         lua-5.2.2-configure-compat-module.patch
 %endif
 # https://www.lua.org/bugs.html
 Patch9:         lua-5.3.4-bug1.patch
@@ -60,7 +60,7 @@ memory management with garbage collection, making it ideal for
 configuration, scripting, and rapid prototyping.
 
 %package devel
-Summary:        Development files for %{name}
+Summary:        Development files for lua
 Group:          System Environment/Libraries
 Requires:       %{name}%{?_isa} = %{version}-%{release}
 Requires:       pkgconfig
