@@ -17,13 +17,13 @@ Summary:        Powerful light-weight programming language
 Group:          Development/Languages
 License:        MIT
 URL:            http://www.lua.org/
-Source0:        http://www.lua.org/ftp/lua-%{version}.tar.gz
+Source0:        https://www.lua.org/ftp/lua-%{version}.tar.gz
 # copied from doc/readme.html on 2014-07-18
 Source1:        mit.txt
 %if 0%{?bootstrap}
-Source2:        http://www.lua.org/ftp/lua-%{bootstrap_version}.tar.gz
+Source2:        https://www.lua.org/ftp/lua-%{bootstrap_version}.tar.gz
 %endif
-Source3:        http://www.lua.org/tests/lua-%{version}-tests.tar.gz
+Source3:        https://www.lua.org/tests/lua-%{version}-tests.tar.gz
 # multilib
 Source4:        luaconf.h
 # rpm-macro
