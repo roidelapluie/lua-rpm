@@ -165,7 +165,7 @@ sed -i.orig -e '
 LD_LIBRARY_PATH=$RPM_BUILD_ROOT/%{_libdir} $RPM_BUILD_ROOT/%{_bindir}/lua -e"_U=true" all.lua
 
 mv $RPM_BUILD_ROOT/%{_bindir}/lua $RPM_BUILD_ROOT/%{_bindir}/lua53
-mv $RPM_BUILD_ROOT/%{_bindir}/lua $RPM_BUILD_ROOT/%{_bindir}/luac53
+mv $RPM_BUILD_ROOT/%{_bindir}/luac $RPM_BUILD_ROOT/%{_bindir}/luac53
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
