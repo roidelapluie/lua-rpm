@@ -6,6 +6,8 @@
 %global bootstrap_major_version 5.2
 %global bootstrap_version %{bootstrap_major_version}.3
 
+%global _hardened_build 1
+
 # Place rpm-macros into proper location.
 %global macrosdir %(d=%{_rpmconfigdir}/macros.d; [ -d $d ] || d=%{_sysconfdir}/rpm; echo $d)
 
