@@ -12,7 +12,7 @@
 
 Name:           lua53
 Version:        %{major_version}.4
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        Powerful light-weight programming language
 Group:          Development/Languages
 License:        MIT
@@ -166,6 +166,7 @@ LD_LIBRARY_PATH=$RPM_BUILD_ROOT/%{_libdir} $RPM_BUILD_ROOT/%{_bindir}/lua -e"_U=
 
 mv $RPM_BUILD_ROOT/%{_bindir}/lua $RPM_BUILD_ROOT/%{_bindir}/lua53
 mv $RPM_BUILD_ROOT/%{_bindir}/luac $RPM_BUILD_ROOT/%{_bindir}/luac53
+rm -r $RPM_BUILD_ROOT/%{_mandir}/man1/lua*.1*
 
 %install
 make install DESTDIR=$RPM_BUILD_ROOT
@@ -203,10 +204,7 @@ install -Dpm 0644 %{SOURCE1000} $RPM_BUILD_ROOT/%{macrosdir}/macros.lua
 %dir %{_libdir}/lua/%{bootstrap_major_version}
 %dir %{_datadir}/lua/%{bootstrap_major_version}
 %endif
-%{_mandir}/man1/lua*.1*
-%dir %{_libdir}/lua
 %dir %{_libdir}/lua/%{major_version}
-%dir %{_datadir}/lua
 %dir %{_datadir}/lua/%{major_version}
 
 %files libs
